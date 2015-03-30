@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+        <ui:composition template="./plantillaEmW/templateE.xhtml">
+
+            <ui:define name="top">
+                top
+            </ui:define>
+
+            <ui:define name="left">
+                left
+            </ui:define>
+
+            <ui:define name="content">
+                content
+                <f:view>
+                    <h:form>
+                        <h1><h:outputText value="Create/Edit"/></h1>
+                        <h:panelGrid columns="2">
+                            <h:outputLabel value="IdArea:" for="idArea" />
+                            <h:inputText id="idArea" value="#{areaBean.area.idArea}" title="IdArea" required="true" requiredMessage="The IdArea field is required."/>
+                            <h:outputLabel value="NombreArea:" for="nombreArea" />
+                            <h:inputText id="nombreArea" value="#{areaBean.area.nombreArea}" title="NombreArea" />
+                            <h:outputLabel value="DescripcionArea:" for="descripcionArea" />
+                            <h:inputText id="descripcionArea" value="#{areaBean.area.descripcionArea}" title="DescripcionArea" />
+                        </h:panelGrid>
+                        <h:commandButton value="Guardar Area" action="#{areaBean.guardarArea()}"/>
+                    </h:form>
+                </f:view>
+
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

@@ -1,0 +1,5 @@
+NOTA: En la versión 2.0.4 de JDOM, los paquetes donde se encuentran las librerías han cambiado. Ejemplo de importaciones:
+Para JDOM 2.0.4:
+import org.jdom2.*;
+Para JDOM 1.1.3:
+import org.jdom.*;

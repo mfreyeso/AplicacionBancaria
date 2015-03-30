@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+        <ui:composition template="./plantillaEmW/templateE.xhtml">
+
+            <ui:define name="top">
+                top
+            </ui:define>
+
+            <ui:define name="left">
+                left
+                <h:form>
+                    <h:commandButton value="Nuevo Cargo" action="#{cargoBean.prepararNuevoCargo()}"/><br></br>
+                    <h:commandButton value="Editar Cargo" action="#{cargoBean.prepararEditarCargo()}"/>
+                    <h:commandButton value="Eliminar Cargo" action="#{cargoBean.prepararEliminarCargo()}"/>
+                
+                </h:form>
+            </ui:define>
+
+            <ui:define name="content">
+                content
+                <f:view>
+                    <h:form>
+                        <h1><h:outputText value="List"/></h1>
+                        <h:dataTable value="#{cargoBean.cargos}" var="item">
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="IdCargo"/>
+                                </f:facet>
+                                <h:outputText value="#{item.idCargo}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="NombreCargo"/>
+                                </f:facet>
+                                <h:outputText value="#{item.nombreCargo}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="DescripcionCargo"/>
+                                </f:facet>
+                                <h:outputText value="#{item.descripcionCargo}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Salario"/>
+                                </f:facet>
+                                <h:outputText value="#{item.salario}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="IdAreaF"/>
+                                </f:facet>
+                                <h:outputText value="#{item.idAreaF}"/>
+                            </h:column>
+                        </h:dataTable>
+                    </h:form>
+                </f:view>
+
+
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

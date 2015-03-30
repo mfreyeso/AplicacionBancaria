@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+        <ui:composition template="./plantillaEmW/templateE.xhtml">
+
+            <ui:define name="top">
+                top
+            </ui:define>
+
+            <ui:define name="left">
+                left
+            </ui:define>
+
+            <ui:define name="content">
+                content
+                <f:view>
+                    <h:form>
+                        <h1><h:outputText value="Create/Edit"/></h1>
+                        <h:panelGrid columns="2">
+                            <h:outputLabel value="Identificacion:" for="identificacion" />
+                            <h:inputText id="identificacion" value="#{empleadoBean.empleado.identificacion}" title="Identificacion" required="true" requiredMessage="The Identificacion field is required."/>
+                            <h:outputLabel value="Nombres:" for="nombres" />
+                            <h:inputText id="nombres" value="#{empleadoBean.empleado.nombres}" title="Nombres" />
+                            <h:outputLabel value="PrimerApellido:" for="primerApellido" />
+                            <h:inputText id="primerApellido" value="#{empleadoBean.empleado.primerApellido}" title="PrimerApellido" />
+                            <h:outputLabel value="SegundoApellido:" for="segundoApellido" />
+                            <h:inputText id="segundoApellido" value="#{empleadoBean.empleado.segundoApellido}" title="SegundoApellido" />
+                            <h:outputLabel value="Edad:" for="edad" />
+                            <h:inputText id="edad" value="#{empleadoBean.empleado.edad}" title="Edad" />
+                            <h:outputLabel value="Direccion:" for="direccion" />
+                            <h:inputText id="direccion" value="#{empleadoBean.empleado.direccion}" title="Direccion" />
+                            <h:outputLabel value="Telefono:" for="telefono" />
+                            <h:inputText id="telefono" value="#{empleadoBean.empleado.telefono}" title="Telefono" />
+                            <h:outputLabel value="NoCuentaBancaria:" for="noCuentaBancaria" />
+                            <h:inputText id="noCuentaBancaria" value="#{empleadoBean.empleado.noCuentaBancaria}" title="NoCuentaBancaria" />
+                            <h:outputLabel value="IdCargo:" for="idCargo" />
+                            <h:selectOneMenu id="idCargo" value="#{empleadoBean.empleado.idCargo}" title="IdCargo" >
+                                <!-- TODO: update below reference to list of available items-->
+                                <f:selectItems value="#{fixme}"/>
+                            </h:selectOneMenu>
+                            <h:outputLabel value="IdBanco:" for="idBanco" />
+                            <h:selectOneMenu id="idBanco" value="#{empleadoBean.empleado.idBanco}" title="IdBanco" >
+                                <!-- TODO: update below reference to list of available items-->
+                                <f:selectItems value="#{fixme}"/>
+                            </h:selectOneMenu>
+                        </h:panelGrid>
+                        <h:commandButton value="Guardar Empleado" action="#{empleadoBean.eliminarEmpleado()}"/>
+                    </h:form>
+                </f:view>
+
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>
